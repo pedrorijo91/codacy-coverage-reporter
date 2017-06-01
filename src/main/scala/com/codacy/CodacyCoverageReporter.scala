@@ -69,6 +69,12 @@ object CodacyCoverageReporter {
 
     val parser = buildParser
 
+    var x = null;
+    x = 43;
+    x = null;
+
+   var y = x;
+
     parser.parse(args, Config()) match {
       case Some(config) if !validUrl(config.codacyApiBaseUrl) =>
         logger.error(s"Error: Invalid CODACY_API_BASE_URL: ${config.codacyApiBaseUrl}")
